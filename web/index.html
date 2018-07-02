@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ontology Browser</title>
+
+        <link rel="stylesheet" type="text/css" href="Style/mystyle.css">
+
+        <script src="Scripts/jquery-1.11.0.js"></script>
+        <script src="Scripts/jquery.ui.core.js"></script>
+        <script src="js/onto.js" type="text/javascript"></script>
+        <script src="js/query.js" type="text/javascript"></script>
+        <script src="js/class.js" type="text/javascript"></script>
+        <script src="js/property.js" type="text/javascript"></script>
+        <script src="js/diseaseNgenes.js" type="text/javascript"></script>
+        <script src="js/disease.js" type="text/javascript"></script>
+        <script src="js/gene.js" type="text/javascript"></script>
+        <script src="js/search.js" type="text/javascript"></script>
+    </head>
+    <body bgcolor="#BBEEBB">
+        <table align="left" >
+            <tr><td valign="top" width="16%" style="white-space: nowrap;" >
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="img/giphy.gif" height="110" width="170">
+                    <fieldset>
+                        <legend><b>Functions</b></legend>
+                        <ul>
+                            <li><a href="#" id="ListLink">All Triples</a></li>
+                            <li><a href="#" id="ClassLink">Distinct Classes</a></li> 
+                            <li><a href="#" id="PropertyLink">Distinct Properties</a></li>
+                            <!--                           <a href='#' class='disNgen' data_val='genes'>aa</a>-->
+
+
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend><b>Sparql Editor</b></legend>
+                        <form name="query" id="query" class="form-style-2">
+                            <textarea cols="26" rows="8" name="ta" id="queryinput">SELECT * WHERE {?subject ?predicate ?object} limit 50</textarea>
+                            </br><input type="button" value="Execute Query" id="qrybtn">
+                        </form>
+
+                        <b>Sparqls</b><br>
+                        <a href="#" id="sparql1">Possible Drug for particular Disease</a><input type="text" id="dno" value="157" size="3" maxlength="5"></br>
+                        <a href="#" id="sparql2">All Type of Syndrome</a></br>
+                    </fieldset>
+                    <fieldset>
+                        <legend><b>Search</b></legend>
+                        <form name="search" id="search" class="form-style-2">
+                            <input type="text" id="searchvalue" placeholder="cancer or syndrome or EGFR">
+                            </br><input type="button" value="Search Disease" id="sbdbt">
+                            <input type="button" value="Search Gene" id="sbgbt">
+                        </form>
+                    </fieldset>
+
+                </td>
+
+
+                <td valign="top" width="30%" style="white-space: nowrap;"> 
+                    <p class="small"><b><font size="7">OntoBrowser</font></b>
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="1">Inspired By <b>PROKINO</b></font>
+                    </p>
+                    <div class="form-style-2" id="ListDiv" hidden="true" style="width:500px; height:600px; overflow:auto;" >
+                        <table class="bordered">
+
+                            <tbody id="listTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="ImgDiv"  >
+
+                        <br><br><br><br><br><br><br><br>
+
+                        OntoBrowser is inspired from PROKINO onotology browser.<br>
+                        This Browser is developed to browse a particular Ontology<br>
+                        named Diseasome. Diseasome is awesome ontology which <br>
+                        contains all the information about diseases and genes <br>
+                        associated with that disease and prefered drug for that<br>
+                        disease. It has all the information that anybody(individual<br>
+                        or doctor) wants to know about disease.<br>
+                        
+                    </div>
+                </td><td valign="top"  style="white-space: nowrap;">
+
+                    <div id="content">
+                        <div style="height:600px;">
+                            <iframe src="" name="ifrm" width="100%" frameborder="0"  id="ifrm" scrolling="auto" width="100%" style="height:620px;"></iframe>
+                        </div>
+                    </div>
+
+
+                </td></tr>
+        </table>
+    </body>
+</html>
